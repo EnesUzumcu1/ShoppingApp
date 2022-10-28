@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "549642237310",
+    "project_id": "shoppingappp-1929",
+    "storage_bucket": "shoppingappp-1929.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549642237310:android:89ff69c88ab379b5486f2f",
+        "android_client_info": {
+          "package_name": "com.enesuzumcu.shoppingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "549642237310-pj0u812mvpo7oq6ohrpah81emvhmecfa.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDaPcfKXEr7G2tVPK44AHQRbjB1H2T25zc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "549642237310-pj0u812mvpo7oq6ohrpah81emvhmecfa.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
