@@ -101,4 +101,6 @@ dependencies {
 
     //Firebase Firestore
     implementation "com.google.firebase:firebase-firestore:$firebase_firestore"
+
+    implementation("androidx.datastore:datastore-preferences:$datastore_version")
 }
