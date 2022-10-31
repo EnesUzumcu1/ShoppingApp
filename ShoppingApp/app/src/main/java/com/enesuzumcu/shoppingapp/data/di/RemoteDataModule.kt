@@ -1,7 +1,7 @@
 package com.enesuzumcu.shoppingapp.data.di
 
 import com.enesuzumcu.shoppingapp.data.remote.service.FirebaseService
-import com.enesuzumcu.shoppingapp.data.remote.utils.Constants
+import com.enesuzumcu.shoppingapp.utils.Constants
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import dagger.Module

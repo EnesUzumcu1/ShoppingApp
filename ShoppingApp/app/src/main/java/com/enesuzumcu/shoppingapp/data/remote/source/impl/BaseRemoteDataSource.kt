@@ -1,6 +1,6 @@
 package com.enesuzumcu.shoppingapp.data.remote.source.impl
 
-import com.enesuzumcu.shoppingapp.data.remote.utils.DataState
+import com.enesuzumcu.shoppingapp.utils.DataState
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.*
 import retrofit2.Response

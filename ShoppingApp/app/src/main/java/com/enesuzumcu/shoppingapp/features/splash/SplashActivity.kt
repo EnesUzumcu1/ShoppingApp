@@ -5,12 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.lifecycle.whenResumed
-import androidx.navigation.NavController
-import androidx.navigation.findNavController
-import com.enesuzumcu.shoppingapp.MainActivity
-import com.enesuzumcu.shoppingapp.R
 import com.enesuzumcu.shoppingapp.databinding.ActivitySplashBinding
+import com.enesuzumcu.shoppingapp.features.main.MainActivity
+import com.enesuzumcu.shoppingapp.features.onboarding.OnBoardingActivity
 import com.enesuzumcu.shoppingapp.features.signinandsignup.SignInAndSignUpFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
@@ -54,7 +51,7 @@ class SplashActivity : AppCompatActivity() {
     private fun navigateToOnBoarding() {
         lifecycleScope.launch {
             delay(2000)
-            val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            val intent = Intent(this@SplashActivity, OnBoardingActivity::class.java)
             startActivity(intent)
             finish()
         }

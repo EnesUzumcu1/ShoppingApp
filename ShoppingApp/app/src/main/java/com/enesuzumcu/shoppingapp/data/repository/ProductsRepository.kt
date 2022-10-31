@@ -3,7 +3,7 @@ package com.enesuzumcu.shoppingapp.data.repository
 import com.enesuzumcu.shoppingapp.data.model.CategoriesResponse
 import com.enesuzumcu.shoppingapp.data.model.Product
 import com.enesuzumcu.shoppingapp.data.model.ProductsResponse
-import com.enesuzumcu.shoppingapp.data.remote.utils.DataState
+import com.enesuzumcu.shoppingapp.utils.DataState
 import kotlinx.coroutines.flow.Flow
 
 

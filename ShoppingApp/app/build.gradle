@@ -103,4 +103,7 @@ dependencies {
     implementation "com.google.firebase:firebase-firestore:$firebase_firestore"
 
     implementation("androidx.datastore:datastore-preferences:$datastore_version")
+
+    //ViewPager2
+    implementation("androidx.viewpager2:viewpager2:$viewpager_version")
 }

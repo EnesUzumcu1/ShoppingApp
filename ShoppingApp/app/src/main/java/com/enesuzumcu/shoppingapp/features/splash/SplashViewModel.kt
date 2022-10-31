@@ -30,6 +30,7 @@ class SplashViewModel  @Inject constructor(private val dataStoreManager: DataSto
             }
         }
     }
+
 }
 
 sealed class SplashViewEvent {
