@@ -1,4 +1,4 @@
-package com.enesuzumcu.shoppingapp.data.repository
+package com.enesuzumcu.shoppingapp.domain.repository
 
 import com.enesuzumcu.shoppingapp.data.model.CategoriesResponse
 import com.enesuzumcu.shoppingapp.data.model.Product

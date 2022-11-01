@@ -3,14 +3,20 @@ package com.enesuzumcu.shoppingapp.features.splash
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.enesuzumcu.shoppingapp.data.local.DataStoreManager
+import com.google.firebase.auth.FirebaseAuth
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
+import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class SplashViewModel  @Inject constructor(private val dataStoreManager: DataStoreManager) : ViewModel(){
+class SplashViewModel @Inject constructor(
+    private val dataStoreManager: DataStoreManager,
+    private val firebaseAuth: FirebaseAuth
+) :
+    ViewModel() {
 
     private val _uiEvent = MutableSharedFlow<SplashViewEvent>(replay = 0)
     val uiEvent: SharedFlow<SplashViewEvent> = _uiEvent
@@ -19,11 +25,14 @@ class SplashViewModel  @Inject constructor(private val dataStoreManager: DataSto
         checkOnBoardingVisibleStatus()
     }
 
-    private fun checkOnBoardingVisibleStatus(){
+    private fun checkOnBoardingVisibleStatus() {
         viewModelScope.launch {
-            dataStoreManager.getOnBoardingVisible.collect{
-                if(it){
-                    _uiEvent.emit(SplashViewEvent.NavigateToLogin)
+            val isOnBoardingVisible = dataStoreManager.getOnBoardingVisible.first()
+            if (checkCurrentUser()) {
+                _uiEvent.emit(SplashViewEvent.NavigateToHome(true))
+            } else {
+                if (isOnBoardingVisible) {
+                    _uiEvent.emit(SplashViewEvent.NavigateToHome(false))
                 } else {
                     _uiEvent.emit(SplashViewEvent.NavigateToOnBoarding)
                 }
@@ -31,9 +40,16 @@ class SplashViewModel  @Inject constructor(private val dataStoreManager: DataSto
         }
     }
 
+    private fun checkCurrentUser(): Boolean {
+        firebaseAuth.currentUser?.let {
+            return true
+        } ?: run {
+            return false
+        }
+    }
 }
 
 sealed class SplashViewEvent {
-    object NavigateToLogin : SplashViewEvent()
+    class NavigateToHome(val isNavigateHome: Boolean) : SplashViewEvent()
     object NavigateToOnBoarding : SplashViewEvent()
 }

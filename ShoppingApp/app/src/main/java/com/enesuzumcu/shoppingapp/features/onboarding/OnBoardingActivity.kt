@@ -77,7 +77,7 @@ class OnBoardingActivity : AppCompatActivity() {
 
     private fun navigateToMain() {
         val intent = Intent(this, MainActivity::class.java)
-        intent.putExtra(MainActivity.KEY_NAVIGATE_HOME, true)
+        intent.putExtra(MainActivity.KEY_NAVIGATE_HOME, false)
         startActivity(intent)
         finish()
     }

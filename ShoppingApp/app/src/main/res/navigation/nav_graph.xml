@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.enesuzumcu.shoppingapp.features.home.HomeFragment"
-        android:label="HomeFragment" >
-        <action
-            android:id="@+id/action_homeFragment_to_signInFragment2"
-            app:destination="@id/signInFragment2" />
-    </fragment>
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home"/>
     <fragment
         android:id="@+id/searchFragment"
         android:name="com.enesuzumcu.shoppingapp.features.search.SearchFragment"
-        android:label="SearchFragment" />
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search"/>
     <fragment
         android:id="@+id/profileFragment"
         android:name="com.enesuzumcu.shoppingapp.features.profile.ProfileFragment"
-        android:label="ProfileFragment" />
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile"/>
     <fragment
-        android:id="@+id/signInFragment2"
-        android:name="com.enesuzumcu.shoppingapp.features.signinandsignup.signin.SignInFragment"
-        android:label="SignInFragment" />
+        android:id="@+id/signInAndSignUpFragment"
+        android:name="com.enesuzumcu.shoppingapp.features.signinandsignup.SignInAndSignUpFragment"
+        android:label="SignInAndSignUpFragment" />
 </navigation>

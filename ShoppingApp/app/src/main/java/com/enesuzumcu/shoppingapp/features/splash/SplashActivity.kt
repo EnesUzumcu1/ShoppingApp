@@ -29,8 +29,8 @@ class SplashActivity : AppCompatActivity() {
                         is SplashViewEvent.NavigateToOnBoarding -> {
                             navigateToOnBoarding()
                         }
-                        is SplashViewEvent.NavigateToLogin -> {
-                            navigateToLogin()
+                        is SplashViewEvent.NavigateToHome -> {
+                            navigateToHome(it.isNavigateHome)
                         }
                     }
                 }
@@ -39,10 +39,11 @@ class SplashActivity : AppCompatActivity() {
 
     }
 
-    private fun navigateToLogin() {
+    private fun navigateToHome(isNavigateHome: Boolean) {
         lifecycleScope.launch {
             delay(2000)
             val intent = Intent(this@SplashActivity, MainActivity::class.java)
+            intent.putExtra(MainActivity.KEY_NAVIGATE_HOME, isNavigateHome)
             startActivity(intent)
             finish()
         }

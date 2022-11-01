@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_nav"
+    app:startDestination="@id/signInFragment">
+
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.enesuzumcu.shoppingapp.features.signin.SignInFragment"
+        android:label="fragment_signin"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/action_signInFragment_to_nav_graph"
+            app:destination="@id/nav_graph" />
+        <action
+            android:id="@+id/action_signInFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.enesuzumcu.shoppingapp.features.signup.SignUpFragment"
+        android:label="fragment_signup"
+        tools:layout="@layout/fragment_signup"/>
+
+    <include app:graph="@navigation/nav_graph" />
+</navigation>

@@ -5,4 +5,6 @@
     <string name="on_boarding_finish_button">Finish</string>
     <string name="on_boarding_prev_button">Prev</string>
     <string name="on_boarding_next_button">Next</string>
+    <string name="sign_in">Sign In</string>
+    <string name="sign_up">Sign Up</string>
 </resources>

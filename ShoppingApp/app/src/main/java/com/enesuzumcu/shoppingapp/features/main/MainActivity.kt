@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.NavOptions
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.enesuzumcu.shoppingapp.R
@@ -44,9 +45,8 @@ class MainActivity : AppCompatActivity() {
         val navController = navHostFragment.navController
         binding.bottomNavigation.setupWithNavController(navController)
         if (isNavigateToHome.not()) {
-            navController.navigate(R.id.nav_graph)
+            navController.navigate(R.id.signInAndSignUpFragment)
         }
         binding.isVisibleBar = isNavigateToHome
-
     }
 }

@@ -1,4 +1,4 @@
-package com.enesuzumcu.shoppingapp.data.remote.utils
+package com.enesuzumcu.shoppingapp.utils
 
 sealed class DataState<T> {
     data class Success<T>(val data: T): DataState<T>()
