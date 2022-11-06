@@ -2,13 +2,15 @@ package com.enesuzumcu.shoppingapp.features.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.NavOptions
+import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupWithNavController
 import com.enesuzumcu.shoppingapp.R
 import com.enesuzumcu.shoppingapp.databinding.ActivityMainBinding
+import com.enesuzumcu.shoppingapp.features.basket.BasketFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
@@ -37,6 +39,10 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+        binding.toolbar.cvIcon.setOnClickListener{
+            BasketFragment().show(supportFragmentManager,"Basket")
+        }
     }
 
     private fun initNavController(isNavigateToHome: Boolean) {
@@ -48,5 +54,16 @@ class MainActivity : AppCompatActivity() {
             navController.navigate(R.id.signInAndSignUpFragment)
         }
         binding.isVisibleBar = isNavigateToHome
+        binding.toolbar.isVisibleToolBar = isNavigateToHome
+
+        onBackPress(navController)
+    }
+
+    private fun onBackPress(navController: NavController){
+        onBackPressedDispatcher.addCallback( object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                navController.navigate(R.id.nav_graph)
+            }
+        })
     }
 }
