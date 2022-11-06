@@ -43,8 +43,8 @@ class SignInFragment : Fragment() {
                     when (it) {
                         is SignInViewEvent.NavigateToMain -> {
                             navController?.navigate(R.id.nav_graph, null)
-                            (requireActivity() as MainActivity).binding.bottomNavigation.visibility =
-                                View.VISIBLE
+                            (requireActivity() as MainActivity).binding.isVisibleBar = true
+                            (requireActivity() as MainActivity).binding.toolbar.isVisibleToolBar = true
 
                             Snackbar.make(requireView(), "Login Success", Toast.LENGTH_SHORT)
                                 .show()
@@ -74,5 +74,10 @@ class SignInFragment : Fragment() {
                 binding.etPasswordLogin.text.trim().toString()
             )
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        loadingProgressBar.hide()
     }
 }

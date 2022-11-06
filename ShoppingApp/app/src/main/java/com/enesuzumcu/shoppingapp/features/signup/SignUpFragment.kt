@@ -45,8 +45,8 @@ class SignUpFragment : Fragment() {
                             navController?.navigate(
                                 R.id.nav_graph,null
                             )
-                            (requireActivity() as MainActivity).binding.bottomNavigation.visibility =
-                                View.VISIBLE
+                            (requireActivity() as MainActivity).binding.isVisibleBar = true
+                            (requireActivity() as MainActivity).binding.toolbar.isVisibleToolBar = true
                             Snackbar.make(requireView(), "Register Success", Snackbar.LENGTH_SHORT)
                                 .show()
                         }

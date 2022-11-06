@@ -8,7 +8,6 @@ import androidx.lifecycle.lifecycleScope
 import com.enesuzumcu.shoppingapp.databinding.ActivitySplashBinding
 import com.enesuzumcu.shoppingapp.features.main.MainActivity
 import com.enesuzumcu.shoppingapp.features.onboarding.OnBoardingActivity
-import com.enesuzumcu.shoppingapp.features.signinandsignup.SignInAndSignUpFragment
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch

@@ -52,7 +52,7 @@ class SignUpViewModel @Inject constructor(
     private fun setUserName(userName: String, uuid: String?) {
         viewModelScope.launch {
             dataStoreManager.setUserName(userName)
-            fireStore.collection("users").add(mapOf("username" to userName, "uuid" to uuid))
+            fireStore.collection("users").document(uuid.toString()).set(mapOf("username" to userName, "uuid" to uuid, "completedOrder" to 0))
                 .addOnSuccessListener { documentReference ->
                     viewModelScope.launch { _uiEvent.emit(SignUpViewEvent.NavigateToMain) }
                 }.addOnFailureListener { error ->
