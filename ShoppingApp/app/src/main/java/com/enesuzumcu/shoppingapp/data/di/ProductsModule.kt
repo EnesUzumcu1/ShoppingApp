@@ -3,6 +3,8 @@ package com.enesuzumcu.shoppingapp.data.di
 import com.enesuzumcu.shoppingapp.data.remote.api.ProductsApiService
 import com.enesuzumcu.shoppingapp.data.remote.source.ProductsRemoteDataSource
 import com.enesuzumcu.shoppingapp.data.remote.source.impl.ProductsRemoteDataSourceImpl
+import com.enesuzumcu.shoppingapp.domain.repository.ProductsRepository
+import com.enesuzumcu.shoppingapp.domain.repository.impl.ProductsRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -23,4 +25,9 @@ class ProductsModule {
     @Provides
     fun provideProductsRemoteDataSource(productsService: ProductsApiService): ProductsRemoteDataSource =
         ProductsRemoteDataSourceImpl(productsService)
+
+    @Singleton
+    @Provides
+    fun provideProductsRepository(productsRemoteDataSource: ProductsRemoteDataSource): ProductsRepository =
+        ProductsRepositoryImpl(productsRemoteDataSource)
 }

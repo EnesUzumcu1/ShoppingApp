@@ -17,7 +17,7 @@ interface ProductsApiService {
     @GET("products/categories")
     suspend fun getAllCategories(): Response<CategoriesResponse>
 
-    @GET("products/categories/{category_name}")
+    @GET("products/category/{category_name}")
     suspend fun getSpecificCategory(@Path("category_name") category: String): Response<ProductsResponse>
 
 
