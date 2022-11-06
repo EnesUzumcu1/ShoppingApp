@@ -19,8 +19,7 @@ class MainViewModel @Inject constructor(savedStateHandle: SavedStateHandle) : Vi
                 _uiState.value = MainUiState.Success(false)
             }
         }
-    }
-}
+    }}
 
 sealed class MainUiState() {
     class Success(val isNavigateHome: Boolean = false) : MainUiState()
