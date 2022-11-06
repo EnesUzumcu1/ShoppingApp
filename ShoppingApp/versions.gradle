@@ -28,9 +28,6 @@ ext {
     //Lottie
     lottie_version = "4.2.2"
 
-    //Room
-    room_version = "2.4.2"
-
     //Coroutine
     coroutines_version = "1.6.4"
     lifecyle_version_ktx_version = "2.5.1"
@@ -40,4 +37,7 @@ ext {
 
     //Firebase Firestore
     firebase_firestore = "24.4.0"
+
+    //Glide
+    glide_version = "4.14.2"
 }

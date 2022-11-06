@@ -19,3 +19,11 @@ data class Product(
     @SerializedName("title")
     val title: String?
 )
+
+data class ProductDTO(
+    val id: Long?,
+    val price: Double?,
+    val image: String?,
+    val title: String?,
+    var quantity: Long?
+)
